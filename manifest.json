@@ -1,0 +1,33 @@
+{
+  "manifest_version": 2,
+  "name": "Chronext",
+  "description": "Copies issue description to clipboard",
+  "version": "0.01",
+  "icons": {
+  },
+  "browser_action": {
+    "default_title": "Chronext"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://github.com/*/*/issues/*"
+      ],
+      "js": [
+        "inject.js"
+      ]
+    }
+  ],
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "permissions": [
+    "contextMenus",
+    "management",
+    "tabs",
+    "activeTab",
+    "storage",
+    "*://*/",
+    "webNavigation"
+  ]
+}
